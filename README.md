@@ -13,6 +13,9 @@ To use this theme, your needs:
 
 - Download the zip file.
 - Install as a new wordpress theme than activate it.
+- Go to your wordpress theme directory and go in to oceansapart-main folder from terminal or console.
+- type npm install , wait for complete.
+- in same folder type npm run build , wait for comple
 - Than go to ACF Field groups and click tab Sync available.
 - Sync fields.
 - Go to Pages and add a new page.
