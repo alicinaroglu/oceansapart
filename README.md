@@ -1,47 +1,35 @@
-# Foundation for Sites Template
+# Oceansapart Theme
 
-**Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
-
-This is the basic starter project for [Foundation for Sites 6](http://foundation.zurb.com/sites). It includes a Sass compiler and a starter HTML file for you.
+Wordpress Theme for oceansapart.com 
 
 ## Installation
 
-To use this template, your computer needs:
+To use this theme, your needs:
 
-- [NodeJS](https://nodejs.org/en/) (12 or greater)
-- [Git](https://git-scm.com/)
+- Installed and working Wordpress Site
+- Advanced Custom Fields Pro Plugin (installed and activated)
 
-This template can be installed with the Foundation CLI, or downloaded and set up manually.
+### Setup
 
-### Using the CLI
+- Download the zip file.
+- Install as a new wordpress theme than activate it.
+- Than go to ACF Field groups and click tab Sync available.
+- Sync fields.
+- Go to Pages and add a new page.
+- Select image for Page Featured Image.
+- You can see the boxes below which name Hero Image, add your heading and paragraph text.
+- Update the page, you can see our Hero Page
 
-Install the Foundation CLI with this command:
+### Some notes for you
+- I always preffer bootstrap in my previous works, thatswhy it takes a bit longer to understand Foundation Zurb structure and classes.
+- You already said for "not perfect implementation" but i try to make similar to desktop and mobile jpg files.
+- I try to use only Foundation Zurb structure and classes thatswhy i didn't add any inline css code or additional css files.
+- So as you can see the link Foundation Zurb has some problems about vertical aligment with callout classes. I can make with flex and align-items but as i said before i didnt want to add any custom css code.
 
-```bash
-npm install foundation-cli --global
-```
+- [Vertical Alligment Issues 1](https://zurb.com/university/lessons/142) - Vertical Alligment Issues 1
+- [Vertical Alligment Issues 2](https://github.com/foundation/foundation-sites/issues/10388) - Vertical Alligment Issues 2
 
-Use this command to set up a blank Foundation for Sites project with this template:
+I hope everything is fine for you.
 
-```bash
-foundation new --framework sites --template basic
-```
-
-The CLI will prompt you to give your project a name. The template will be downloaded into a folder with this name.
-
-### Manual Setup
-
-To manually set up the template, first download it with Git:
-
-```bash
-git clone https://github.com/zurb/foundation-sites-template projectname
-```
-
-Then open the folder in your command line, and install the needed dependencies:
-
-```bash
-cd projectname
-npm install
-```
-
-Finally, run `npm start` to run the Sass compiler. It will re-run every time you save a Sass file.
+Best Regards
+Ali Çınaroğlu
