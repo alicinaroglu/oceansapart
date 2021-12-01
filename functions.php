@@ -178,3 +178,27 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/* Register Foundation */
+function poimapper_setup_2() {
+wp_enqueue_style( 'foundation-css', get_template_directory_uri(). '/css/app.css' );
+wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/js/app.js', array(), '1.0.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'poimapper_setup_2' );
+
+/*ACF JSON*/
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+function my_acf_json_save_point( $path ) {  
+    // update path
+    $path = get_stylesheet_directory() . '/acf-json';  
+    // return
+    return $path;
+}
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+function my_acf_json_load_point( $paths ) {
+    // remove original path (optional)
+    unset($paths[0]);  
+    // append path
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    // return
+    return $paths;
+}

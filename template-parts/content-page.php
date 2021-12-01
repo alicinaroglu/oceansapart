@@ -6,49 +6,25 @@
  *
  * @package oceansapart
  */
-
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-
-	<?php oceansapart_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'oceansapart' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'oceansapart' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+  <?php $hero_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail-full' );?>
+  <?php if( have_rows('hero_image') ): ?>
+  <div class="grid-container">
+    <div class="grid-x" data-equalizer>
+      <?php while( have_rows('hero_image') ): the_row(); ?>
+      <div class="cell medium-6 large-7"> <img src="<?php echo $hero_image[0];?>" class="img-responsive" alt=""> </div>
+      <div class="cell medium-6 large-5 callout alert text-center align-self-stretch">
+        <h2>
+          <?php the_sub_field('headline'); ?>
+        </h2>
+        <p>
+          <?php the_sub_field('paragraph'); ?>
+        </p>
+      </div>
+      <?php endwhile; ?>
+    </div>
+  </div>
+  <?php endif; ?>
+</article>
+<!-- #post-<?php the_ID(); ?> -->
